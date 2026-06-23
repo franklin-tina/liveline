@@ -1,8 +1,8 @@
 # liveline-core
 
-Framework-agnostic engine behind [`liveline-vue`](../vue) — real-time, canvas-rendered line / candlestick / multi-series charts at 60fps.
+The framework-agnostic engine powering Liveline — real-time, canvas-rendered line / candlestick / multi-series charts at 60fps.
 
-No framework dependency. Unless you're writing a new framework adapter, use **[`liveline-vue`](../vue)** instead.
+No framework dependency. Unless you're building a new adapter, use a ready-made adapter package instead.
 
 ## Direct use
 

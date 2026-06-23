@@ -12,6 +12,16 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
 
+  demo/vanilla:
+    dependencies:
+      liveline-core:
+        specifier: workspace:*
+        version: link:../../packages/core
+    devDependencies:
+      vite:
+        specifier: ^8.1.0
+        version: 8.1.0(@types/node@26.0.0)
+
   demo/vue:
     dependencies:
       liveline-core:

@@ -2,7 +2,7 @@
   "name": "liveline-core",
   "version": "0.0.7",
   "type": "module",
-  "description": "Framework-agnostic engine for Liveline \u2014 real-time animated canvas charts. Use the liveline-vue adapter unless you're integrating a new framework.",
+  "description": "Framework-agnostic engine for Liveline \u2014 real-time animated canvas charts. Use a ready-made adapter unless you're integrating a new framework.",
   "keywords": [
     "chart",
     "canvas",

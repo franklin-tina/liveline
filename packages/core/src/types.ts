@@ -55,7 +55,7 @@ export interface LivelineSeries {
 /**
  * Framework-neutral prop contract shared by adapters.
  * Adapters re-export this as `LivelineProps`. Native `class`/`style` styling is
- * handled per-framework (Vue passes them through to the chart container).
+ * handled per-framework (the adapter passes them through to the chart container).
  */
 export interface LivelineBaseProps {
   data: LivelinePoint[]

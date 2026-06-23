@@ -5,44 +5,55 @@
 
 Real-time animated charts — line, multi-series, and candlestick modes. Canvas-rendered, 60fps, no CSS imports.
 
-A framework-agnostic rendering engine with thin per-framework adapters. Today there's a **Vue 3** adapter; the engine itself has no framework dependency.
+A framework-agnostic rendering engine with thin adapters. The engine has no framework dependency.
 
 | Package | What |
 | --- | --- |
 | [`liveline-core`](./packages/core) | The engine. Canvas draw loop, theming, math, line/candle/multi pipelines. No framework dependency. |
-| [`liveline-vue`](./packages/vue) | **Vue 3** adapter — the `<Liveline>` component and controls. |
+| [`liveline-vue`](./packages/vue) | Ready-to-use chart component. See its [README](./packages/vue/README.md). |
 
-## Quick start (Vue)
+## Quick start
 
-```vue
-<script setup lang="ts">
-import { ref } from 'vue'
-import { Liveline } from 'liveline-vue'
-import type { LivelinePoint } from 'liveline-vue'
+Drive the engine directly with a canvas and a config:
 
-const data = ref<LivelinePoint[]>([])  // { time: unixSeconds, value: number }
-const value = ref(0)
-</script>
+```ts
+import { createLivelineEngine, resolveTheme } from 'liveline-core'
 
-<template>
-  <div style="height: 300px">
-    <Liveline :data="data" :value="value" color="#3b82f6" theme="dark" />
-  </div>
-</template>
+const engine = createLivelineEngine({
+  canvas,                    // <canvas> element
+  container,                 // sized parent element
+  config: {
+    data,                    // [{ time: unixSeconds, value: number }]
+    value,
+    palette: resolveTheme('#3b82f6', 'dark'),
+    windowSecs: 60,
+    mode: 'line',
+    // …rest of EngineConfig
+  },
+})
+
+engine.update(nextConfig)
+engine.destroy()
 ```
+
+Prefer a ready-made component? See the adapter packages.
 
 ## Develop
 
 ```bash
 pnpm install
-pnpm -r build        # build both packages (core first, then vue)
-pnpm -r typecheck    # tsc + vue-tsc across the workspace
+pnpm -r build        # build all packages (topological order)
+pnpm -r typecheck    # typecheck the workspace
 pnpm -r test         # engine math unit tests
-pnpm dev             # interactive demo (alias: pnpm demo:vue)
+pnpm demo:vue        # adapter demo  (alias: pnpm dev)
+pnpm demo:vanilla    # plain HTML/CSS/JS demo on the bare engine
 ```
 
-The demo (`demo/vue/`) aliases the packages straight to source for instant HMR. It streams live data across line / multi-series / candle / orderbook modes and exposes a control panel that exercises every `<Liveline>` prop — feature flags, badge/window styles, reference line, loading/empty states, custom formatters, and the hover/window/series callbacks.
+Both demos alias the packages straight to source for instant HMR.
+
+- **`demo/vue/`** streams live data across line / multi-series / candle / orderbook modes with a control panel that exercises every prop — feature flags, badge/window styles, reference line, loading/empty states, custom formatters, and the hover/window/series callbacks.
+- **`demo/vanilla/`** drives `liveline-core` directly with `createLivelineEngine` — no framework, no build step beyond Vite — a minimal proof that the engine stands alone.
 
 ## Credit
 
-The engine is derived from [`liveline`](https://github.com/benjitaylor/liveline) by Benji Taylor (MIT). The original prop semantics documented there apply unchanged; see [`packages/vue/README.md`](./packages/vue/README.md) for Vue usage. Original license retained in [`LICENSE`](./LICENSE).
+The engine is derived from [`liveline`](https://github.com/benjitaylor/liveline) by Benji Taylor (MIT). The original prop semantics documented there apply unchanged; see each package's README for usage. Original license retained in [`LICENSE`](./LICENSE).

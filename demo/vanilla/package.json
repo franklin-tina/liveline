@@ -1,0 +1,14 @@
+{
+  "name": "demo-vanilla",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "liveline-core": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^8.1.0"
+  }
+}

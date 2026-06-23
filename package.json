@@ -6,6 +6,7 @@
     "build": "pnpm -r --filter ./packages/* build",
     "dev": "pnpm --filter demo-vue dev",
     "demo:vue": "pnpm --filter demo-vue dev",
+    "demo:vanilla": "pnpm --filter demo-vanilla dev",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test"
   },

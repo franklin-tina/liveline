@@ -1,0 +1,59 @@
+{
+  "name": "liveline-core",
+  "version": "0.0.7",
+  "type": "module",
+  "description": "Framework-agnostic engine for Liveline \u2014 real-time animated canvas charts. Use the liveline-vue adapter unless you're integrating a new framework.",
+  "keywords": [
+    "chart",
+    "canvas",
+    "real-time",
+    "animation",
+    "line-chart",
+    "candlestick",
+    "ohlc",
+    "framework-agnostic"
+  ],
+  "license": "MIT",
+  "author": "Benji Taylor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjitaylor/liveline.git",
+    "directory": "packages/core"
+  },
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9"
+  }
+}

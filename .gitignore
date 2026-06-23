@@ -1,0 +1,10 @@
+dist
+build
+node_modules
+coverage
+.claude
+
+*.log
+*.tsbuildinfo
+.DS_Store
+

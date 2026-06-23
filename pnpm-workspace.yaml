@@ -1,0 +1,7 @@
+packages:
+  - 'packages/*'
+  - 'demo/*'
+allowBuilds:
+  esbuild: false
+minimumReleaseAgeExclude:
+  - vite@8.1.0

@@ -1,0 +1,16 @@
+{
+  "name": "liveline-monorepo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r --filter ./packages/* build",
+    "dev": "pnpm --filter demo-vue dev",
+    "demo:vue": "pnpm --filter demo-vue dev",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  },
+  "packageManager": "pnpm@11.8.0"
+}

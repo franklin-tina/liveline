@@ -1,0 +1,19 @@
+{
+  "name": "demo-vue",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "liveline-vue": "workspace:*",
+    "liveline-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.0",
+    "vue": "^3.5.38"
+  }
+}

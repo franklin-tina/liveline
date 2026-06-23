@@ -1,21 +1,18 @@
-# Liveline (Vue)
+# Liveline
 
-Real-time animated charts for **Vue 3** — line, multi-series, and candlestick modes. Canvas-rendered, 60fps, no CSS imports.
+> [!NOTE]
+> Original ideas derived from [`liveline`](https://github.com/benjitaylor/liveline) by [Benji Taylor](https://github.com/benjitaylor) (MIT).
 
-Two packages: a framework-agnostic engine and a thin Vue adapter.
+Real-time animated charts — line, multi-series, and candlestick modes. Canvas-rendered, 60fps, no CSS imports.
 
-| Package | npm | What |
-| --- | --- | --- |
-| [`liveline-core`](./packages/core) | `liveline-core` | The engine. Canvas draw loop, theming, math, line/candle/multi pipelines. No framework dependency. |
-| [`liveline-vue`](./packages/vue) | `liveline-vue` | **Vue 3** adapter — the `<Liveline>` component and controls. |
+A framework-agnostic rendering engine with thin per-framework adapters. Today there's a **Vue 3** adapter; the engine itself has no framework dependency.
 
-The split keeps the rendering core independent of Vue, so it stays unit-testable on its own and a future adapter (Svelte, Solid, …) could reuse it without touching engine code.
+| Package | What |
+| --- | --- |
+| [`liveline-core`](./packages/core) | The engine. Canvas draw loop, theming, math, line/candle/multi pipelines. No framework dependency. |
+| [`liveline-vue`](./packages/vue) | **Vue 3** adapter — the `<Liveline>` component and controls. |
 
-## Quick start
-
-```bash
-pnpm add liveline-vue
-```
+## Quick start (Vue)
 
 ```vue
 <script setup lang="ts">
@@ -41,7 +38,7 @@ pnpm install
 pnpm -r build        # build both packages (core first, then vue)
 pnpm -r typecheck    # tsc + vue-tsc across the workspace
 pnpm -r test         # engine math unit tests
-pnpm dev             # interactive demo (alias: pnpm demo)
+pnpm dev             # interactive demo (alias: pnpm demo:vue)
 ```
 
 The demo (`demo/vue/`) aliases the packages straight to source for instant HMR. It streams live data across line / multi-series / candle / orderbook modes and exposes a control panel that exercises every `<Liveline>` prop — feature flags, badge/window styles, reference line, loading/empty states, custom formatters, and the hover/window/series callbacks.

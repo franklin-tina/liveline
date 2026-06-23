@@ -2,7 +2,7 @@
 
 Framework-agnostic engine behind [`liveline-vue`](../vue) — real-time, canvas-rendered line / candlestick / multi-series charts at 60fps.
 
-No framework dependency. Unless you're writing a new framework adapter, install **[`liveline-vue`](https://www.npmjs.com/package/liveline-vue)** instead.
+No framework dependency. Unless you're writing a new framework adapter, use **[`liveline-vue`](../vue)** instead.
 
 ## Direct use
 
@@ -21,4 +21,4 @@ engine.destroy()          // remove listeners, observers, rAF loop, badge DOM
 
 `resolveTheme(color, mode)` builds a full `LivelinePalette` from a single accent color. See `EngineConfig` for the complete option set.
 
-Derived from [`liveline`](https://github.com/benjitaylor/liveline) (MIT).
+Derived from [`liveline`](https://github.com/benjitaylor/liveline) by Benji Taylor (MIT).

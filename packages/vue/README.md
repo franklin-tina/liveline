@@ -1,14 +1,8 @@
 # liveline-vue
 
-Real-time animated charts for **Vue 3** — line, multi-series, and candlestick modes. Canvas-rendered, 60fps, no CSS imports. Powered by [`liveline-core`](https://www.npmjs.com/package/liveline-core).
+Real-time animated charts for **Vue 3** — line, multi-series, and candlestick modes. Canvas-rendered, 60fps, no CSS imports. Powered by [`liveline-core`](../core).
 
-## Install
-
-```bash
-pnpm add liveline-vue
-```
-
-Peer dependency: `vue ^3.3.0`.
+Peer dependency: `vue ^3.5.0`.
 
 ## Quick start
 
